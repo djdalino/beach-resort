@@ -7,15 +7,15 @@ import ImageSix from "../images/ImageSix.jpg";
 
 export const sliderData = [
   {
-    title: "Resort 1",
+    title: "Hotel and Resort 1",
     price: "11,000php",
-    path: "/",
+    path: "/about",
     label: "View Home",
     image: ImageOne,
     alt: "Image One"
   },
   {
-    title: "Resort 2",
+    title: "Hotel and Resort 2",
     price: "5,000php",
     path: "/",
     label: "View Home",
@@ -23,7 +23,7 @@ export const sliderData = [
     alt: "Image Two"
   },
   {
-    title: "Resort 3",
+    title: "Hotel and Resort 3",
     price: "8,000php",
     path: "/",
     label: "View Home",
@@ -31,7 +31,7 @@ export const sliderData = [
     alt: "Image Three"
   },
   {
-    title: "Resort 4",
+    title: "Hotel and Resort 4",
     price: "6,000php",
     path: "/",
     label: "View Home",
@@ -39,7 +39,7 @@ export const sliderData = [
     alt: "Image Four"
   },
   {
-    title: "Resort 5",
+    title: "Hotel and Resort 5",
     price: "9,500php",
     path: "/",
     label: "View Home",
@@ -47,9 +47,9 @@ export const sliderData = [
     alt: "Image Five"
   },
   {
-    title: "Resort 6",
+    title: "Hotel and Resort 6",
     price: "10,000php",
-    path: "/",
+    path: "/about",
     label: "View Home",
     image: ImageSix,
     alt: "Image Six"

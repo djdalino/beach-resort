@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   NavbarContainer,
   Nav,
@@ -7,21 +7,37 @@ import {
   NavList,
   NavLink,
   MenuBarContainer,
-  MenuBar
+  MenuBar,
+  ClosedBar,
+  NavContact,
+  Contact,
+  NavBtn
 } from "./NavbarStyles";
 import { menuData } from "../../data/MenuData";
 
 const Navbar = () => {
   const [navMenu, setNavMenu] = useState(false);
+  const [onScroll, setOnScroll] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      setOnScroll(window.scrollY ? true : false);
+    });
+  }, [onScroll]);
 
   const handleNavMenuToggle = () => setNavMenu(!navMenu);
   return (
     <div>
-      <NavbarContainer>
+      <NavbarContainer scroll={onScroll}>
         <Nav>
           <NavLogo>TRVG</NavLogo>
           <MenuBarContainer>
-            <MenuBar onClick={() => handleNavMenuToggle()} />
+            {!navMenu ? (
+              <MenuBar onClick={() => handleNavMenuToggle()} />
+            ) : (
+              <ClosedBar onClick={() => handleNavMenuToggle()} />
+            )}
+            {/* <MenuBar onClick={() => handleNavMenuToggle()} /> */}
           </MenuBarContainer>
           <NavMenu show={navMenu}>
             {menuData.map((data, index) => (
@@ -31,7 +47,11 @@ const Navbar = () => {
                 </NavLink>
               </NavList>
             ))}
+            <NavBtn>Contact</NavBtn>
           </NavMenu>
+          <NavContact show={navMenu}>
+            <Contact>Contact</Contact>
+          </NavContact>
         </Nav>
       </NavbarContainer>
     </div>
